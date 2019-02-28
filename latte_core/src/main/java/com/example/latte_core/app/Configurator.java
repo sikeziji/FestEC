@@ -1,15 +1,22 @@
 package com.example.latte_core.app;
 
 
+import com.joanzapata.iconify.IconFontDescriptor;
+import com.joanzapata.iconify.Iconify;
+
+import java.util.ArrayList;
 import java.util.WeakHashMap;
 
 public class Configurator {
 
 
     private static final WeakHashMap<String,Object> LATTE_CONFIGS = new WeakHashMap<>();
+    //定义存储iconify 封装的空间
+    private static final ArrayList<IconFontDescriptor>  ICON_FONT = new ArrayList<>();
 
-
-    private Configurator(){
+    private Configurator()
+    {
+        initIcons();
         LATTE_CONFIGS.put(ConfigType.CONFIG_READY.name(),false);
     }
 
@@ -48,6 +55,30 @@ public class Configurator {
     public final Configurator withApiHost(String host){
         LATTE_CONFIGS.put(ConfigType.API_HOST.name(), host);
         return  this;
+    }
+
+    /**
+     * 初始化Icons
+     */
+    private void  initIcons(){
+        if (ICON_FONT.size() > 0 )
+        {
+            final Iconify.IconifyInitializer initializer = Iconify.with(ICON_FONT.get(0));
+            for (int i = 1; i < ICON_FONT.size(); i++) {
+                initializer.with(ICON_FONT.get(i));
+            }
+        }
+    }
+
+    /**
+     * 添加自己的ICons
+     * @param descriptor  传入 IconFontDescriptor对象
+     * @return 返回Configurator 对象
+     */
+    private final Configurator withIcon( IconFontDescriptor descriptor)
+    {
+        ICON_FONT.add(descriptor);
+        return this;
     }
 
     //检查配置项是否完成
