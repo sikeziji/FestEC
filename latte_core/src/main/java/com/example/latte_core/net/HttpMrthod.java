@@ -7,5 +7,5 @@ public enum HttpMrthod {
     POST_RAW,
     PUT_RAW,
     DELETE,
-    UOLOAD,
+    UPLOAD,
 }

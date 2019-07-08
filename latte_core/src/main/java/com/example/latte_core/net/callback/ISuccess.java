@@ -1,5 +1,6 @@
 package com.example.latte_core.net.callback;
 
+@FunctionalInterface
 public interface ISuccess {
 
     /**
