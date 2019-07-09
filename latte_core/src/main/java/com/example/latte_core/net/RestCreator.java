@@ -1,10 +1,13 @@
 package com.example.latte_core.net;
 
+import com.example.latte_core.app.ConfigKeys;
 import com.example.latte_core.app.ConfigType;
 import com.example.latte_core.app.Latte;
 
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
+import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
@@ -22,7 +25,7 @@ public class RestCreator {
 
     private static final class RetrofitHolder {
         //获取初始化后的URL
-        private static final String BASE_URL = (String) Latte.getConfigrations().get(ConfigType.API_HOST.name());
+        private static final String BASE_URL = (String) Latte.getConfiguration(ConfigKeys.API_HOST);
 
         private static final Retrofit RETROFIT_CLIENT = new Retrofit.Builder()
                 .baseUrl(BASE_URL)//设置初始化后的URL

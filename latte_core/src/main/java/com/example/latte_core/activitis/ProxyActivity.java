@@ -22,21 +22,21 @@ public abstract class ProxyActivity extends SupportActivity {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
-        initContainer(savedInstanceState);
+//        initContainer(savedInstanceState);
     }
 
     @SuppressLint("RestrictedApi")
-    private void initContainer(@Nullable Bundle savedInstanceState){
-        final ContentFrameLayout container = new ContentFrameLayout(this);
-        container.setId(R.id.delegate_container);
-
-        setContentView(container);
-        if (savedInstanceState == null)
-        {
-            loadRootFragment(R.id.delegate_container,setRootDelegare());
-        }
-
-    }
+//    private void initContainer(@Nullable Bundle savedInstanceState){
+//        final ContentFrameLayout container = new ContentFrameLayout(this);
+//        container.setId(R.id.delegate_container);
+//
+//        setContentView(container);
+//        if (savedInstanceState == null)
+//        {
+//            loadRootFragment(R.id.delegate_container,setRootDelegare());
+//        }
+//
+//    }
 
 
     @Override

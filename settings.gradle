@@ -1,1 +1,1 @@
-include ':example', ':latte_annotation', ':late_compiler', ':latte_core', ':latte_ecs'
+include ':example', ':latte_annotation', ':late_compiler', ':latte_core', ':latte_ecs', ':avloaderlibrary'
