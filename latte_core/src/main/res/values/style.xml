@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <style name="dialog" parent="android:Theme.Dialog">
         <!--去掉边框-->
         <item name="android:windowFrame">null</item>
@@ -17,8 +16,4 @@
         <!--全屏幕-->
         <item name="android:windowFullscreen">true</item>
     </style>
-
-
-
-
 </resources>

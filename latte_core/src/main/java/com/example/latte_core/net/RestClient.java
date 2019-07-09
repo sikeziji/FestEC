@@ -66,6 +66,8 @@ public class RestClient {
                 break;
             case POST:
                 break;
+            case POST_RAW:
+
             case PUT:
                 break;
             case DELETE:
@@ -84,6 +86,7 @@ public class RestClient {
     private Callback<String> getRequestCallback() {
         return new RequestCallbacks(REQUEST, SUCCESS, FAILURE, ERROR);
     }
+
 
     public final void get() {
         request(HttpMrthod.GET);
